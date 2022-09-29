@@ -22,10 +22,20 @@ E.g. my nickname is "bald-chicken" and so my webserver should respond
 at `/nickname` with "bald-chicken". It also needs to respond at the `/`
 URL, but the content isn't important.
 
+
+### Fly.io instructions
+
 Once your app is working, you should deploy it to
-[Heroku](https://heroku.com) (or some other
-place if you're a ninja and prefer to host it elsewhere). To do that,
-you'll need to sign up for a free Heroku account. Then you'll need
+[Heroku](https://heroku.com), [fly.io](https://fly.io), or some other
+place if you're a ninja and prefer to host it elsewhere. 
+Honestly, [fly.io's online instructions](https://fly.io/docs/languages-and-frameworks/golang/)
+are fine. I can't improve upon them here. Deploying to fly.io took a few minutes
+for me. Like, really long! Afterward type `flyctl open` to get your app's URL.
+
+### Heroku instructions
+
+To deploy to Heroku,
+you'll need to sign up for an account. Then you'll need
 to create a Heroku app. From my computer I would do that with a command
 like this, assuming I am in the directory where this file resides
 and you're on the main branch of your repo.
@@ -37,12 +47,8 @@ git push heroku main
 ```
 
 You might want to type "git status" before all that. If you have uncommitted
-changes, clearly they won't be pushed to Heroku 😜.
-
-That will push your git main branch up to Heroku. The `go mod init` is
-used to create a `go.mod` file, which is how Heroku knows that we're using
-Go. Otherwise it's not needed. When you have a more complicated app that
-file will list your "dependencies"&mdash;other code that needs to be imported.
+changes, clearly they won't be pushed to Heroku 😜. Also Heroku costs money
+now!
 
 You can find out the URL of your app running on Heroku by using the `heroku`
 command as follows: `heroku apps:info`. This should display something like
@@ -74,8 +80,8 @@ at [http://server-side-app.solutions.656.mba/](http://server-side-app.solutions.
 ## Tips
 
 - Make sure you commit your work using git and push it to GitHub
-- Deploy your app to Heroku
-- Submit both your GitHub repo URL and your app (Heroku) URL via
+- Deploy your app to Heroku/fly.io
+- Submit both your GitHub repo URL and your app (Heroku or fly.io) URL via
   the class website. If you don't do so, or you do so inaccurately,
   I won't be able to give you a grade that reflects your true
   awesomeness.
